@@ -60,18 +60,18 @@ $result = $koneksi->query($sql);
     </nav>
 
     <div class="container mt-5">
-      <h1>Selamat datang, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-      <p>Anda login sebagai <strong><?php echo htmlspecialchars($_SESSION['role']); ?></strong>.</p>
+      <h1>Selamat datang, <?php echo ($_SESSION['username']); ?>!</h1>
+      <p>Anda login sebagai <strong><?php echo ($_SESSION['role']); ?></strong>.</p>
     </div>
     <div class="container mt-5">
         <div class="row">
             <?php while ($data = $result->fetch_assoc()): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                    <img src="upload/<?= htmlspecialchars($data['foto']); ?>" class="card-img-top" alt="<?= htmlspecialchars($data['nama_produk']); ?>">
+                    <img src="upload/<?= ($data['foto']); ?>" class="card-img-top" alt="<?= ($data['nama_produk']); ?>">
                         <div class="card-body">
-                            <h5 class="card-title"><?= htmlspecialchars($data['nama_produk']); ?></h5>
-                            <p class="card-text"><?= htmlspecialchars($data['deskripsi']); ?></p>
+                            <h5 class="card-title"><?= ($data['nama_produk']); ?></h5>
+                            <p class="card-text"><?= ($data['deskripsi']); ?></p>
                             <p class="card-text"><strong>Rp<?= number_format($data['harga'], 2, ',', '.'); ?></strong></p>
                             <a href="detailproduk.php?id=<?php echo $data['id']?>" class="btn btn-primary" style="background-color: blue; width: 130px; height: 45px;">Detail Produk</a>
                             <a href="Keranjang.php" class="btn btn-primary" style="background-color: blue; width: 200px; height: 45px; margin-top:5px">Tambah Keranjang</a>

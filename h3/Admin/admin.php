@@ -43,8 +43,8 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'admin') {
 
     <!-- Main Content -->
     <div class="container mt-5">
-      <h1 class="text-center">Selamat Datang, Admin <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-      <p class="text-center">Anda login sebagai <strong><?php echo htmlspecialchars($_SESSION['role']); ?></strong>.</p>
+      <h1 class="text-center">Selamat Datang, Admin <?php echo ($_SESSION['username']); ?>!</h1>
+      <p class="text-center">Anda login sebagai <strong><?php echo ($_SESSION['role']); ?></strong>.</p>
 
       <!-- Dashboard Cards -->
       <div class="row mt-4">

@@ -89,17 +89,17 @@ $result = $koneksi->query($sql);
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= htmlspecialchars($row['nama_produk']); ?></td>
-                            <td><?= htmlspecialchars($row['deskripsi']); ?></td>
-                            <td><img src="upload/<?= htmlspecialchars($row['foto']); ?>" alt="<?= htmlspecialchars($row['nama_produk']); ?>" style="width: 100px;"></td>
+                            <td><?= ($row['nama_produk']); ?></td>
+                            <td><?= ($row['deskripsi']); ?></td>
+                            <td><img src="upload/<?= ($row['foto']); ?>" alt="<?= ($row['nama_produk']); ?>" style="width: 100px;"></td>
                             <td>Rp<?= number_format($row['harga'], 2, ',', '.'); ?></td>
                             <td>
                                 <button class="btn btn-warning btn-sm edit-btn" 
                                     data-id="<?= $row['id']; ?>" 
-                                    data-nama_produk="<?= htmlspecialchars($row['nama_produk']); ?>" 
-                                    data-deskripsi="<?= htmlspecialchars($row['deskripsi']); ?>" 
+                                    data-nama_produk="<?= ($row['nama_produk']); ?>" 
+                                    data-deskripsi="<?= ($row['deskripsi']); ?>" 
                                     data-harga="<?= $row['harga']; ?>"
-                                    data-foto="<?= htmlspecialchars($row['foto']); ?>"
+                                    data-foto="<?= ($row['foto']); ?>"
                                     data-bs-toggle="modal" data-bs-target="#modalEdit">Edit</button>
                                 <a href="?hapus=<?= $row['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</a>
                             </td>
